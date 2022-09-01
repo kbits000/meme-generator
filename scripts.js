@@ -1,3 +1,5 @@
 console.log("Hello World!");
 
-console.log(fetch ('https://api.imgflip.com/get_memes'));
+
+fetchedData = fetch ('https://api.imgflip.com/get_memes')
+console.log(fetchedData);
