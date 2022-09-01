@@ -1,10 +1,13 @@
 console.log("Hello World!");
 
 
-fetchedData = fetch ('https://api.imgflip.com/get_memes')
-console.log(fetchedData);
+async function f() {
+    var fetchedData = await fetch ('https://api.imgflip.com/get_memes')
+    console.log("fdfd " + fetchedData);
 
-fetchedData.then (
-    function(result) { console.log("Promise has been resolved") },
-    function(error) { /* handle an error */ }
-);
+    let data = await fetchedData.json(); // read response body and parse as JSON
+    console.log(data);
+    console.log(data["data"]["memes"][0]);
+}
+
+f();
